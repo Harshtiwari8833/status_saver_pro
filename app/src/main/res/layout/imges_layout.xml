@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
             android:layout_height="290dp"
             app:cardCornerRadius="18dp"
             android:background="#BABABA"
-            android:id="@+id/wall_cardView">
+            android:id="@+id/image_cardview">
 
 
             <ImageView
@@ -22,6 +23,8 @@
                 android:layout_height="match_parent"
                 android:background="#BABABA"
                 android:scaleType="centerCrop"
+                app:useMaterialThemeColors = "false"
+
                 android:id="@+id/wall_img"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,10 +34,10 @@
     android:layout_width="36dp"
     android:layout_height="36dp"
     android:layout_margin="10dp"
-    app:useMaterialThemeColors = "false"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    android:src="@drawable/downloading"/>
+    android:id="@+id/download"
+    android:src="@drawable/statussave"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
