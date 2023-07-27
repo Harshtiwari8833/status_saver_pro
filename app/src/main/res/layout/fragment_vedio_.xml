@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F7F7F7"
     android:orientation="vertical"
+    style="@style/SCREEN"
     tools:context=".vedio_Fragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -15,6 +15,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
         android:id="@+id/refresh"
+        style="@style/SCREEN"
         android:orientation="vertical">
 
 
@@ -37,8 +38,8 @@
                     android:layout_marginTop="50dp"
                     android:layout_marginLeft="15dp"
                     android:text="Videos"
+                    style="@style/TEXT"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
                     android:textSize="39dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -46,6 +47,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="22dp"
                     android:layout_marginLeft="15dp"
+                    style="@style/TEXT"
                     android:text="Save and Share: WhatsApp Status Videos"
                     android:textSize="18dp"/>
 

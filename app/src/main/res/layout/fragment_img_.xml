@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F7F7F7"
+    style="@style/SCREEN"
     tools:context=".img_Fragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id= "@+id/refresh"
+        style="@style/SCREEN"
         android:orientation="vertical">
 
 
@@ -37,7 +38,7 @@
                     android:layout_marginLeft="15dp"
                     android:text="Images"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    style="@style/TEXT"
                     android:textSize="39dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -46,6 +47,7 @@
                     android:layout_marginBottom="22dp"
                     android:layout_marginLeft="15dp"
                     android:text="Save and Share: WhatsApp Status Images"
+                    style="@style/TEXT"
                     android:textSize="18dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView

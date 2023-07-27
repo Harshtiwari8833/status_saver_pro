@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F7F7F7"
     tools:context=".MainActivity">
 
 
@@ -16,13 +15,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F7F7F7"
-   >
+    style="@style/SCREEN">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="?actionBarSize"
+        style="@style/SCREEN"
         android:id="@+id/frame"/>
 
     <com.google.android.material.appbar.AppBarLayout
@@ -32,7 +31,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/app_bar"
-            android:background="#F7F7F7"
+            style="@style/SCREEN"
             android:theme="@style/Widget.AppCompat.Light.ActionBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -46,8 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/nav_items"
-        android:background="#F7F7F7"
-
+        style="@style/SCREEN"
         android:layout_alignParentBottom="true"
         android:id="@+id/btm_nav"/>
 

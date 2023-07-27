@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7"
+    style="@style/SCREEN"
     tools:context=".saved_Fragment">
 
     <LinearLayout
@@ -21,7 +21,7 @@
         android:layout_marginLeft="15dp"
         android:text="Downloads"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        style="@style/TEXT"
         android:textSize="39dp"/>
 
         <TextView
@@ -32,6 +32,7 @@
             android:layout_marginLeft="15dp"
             android:text="Here is your saved Images and Vedio"
             android:textSize="18dp"
+            style="@style/TEXT"
             android:paddingBottom="30dp"/>
 
     </LinearLayout>

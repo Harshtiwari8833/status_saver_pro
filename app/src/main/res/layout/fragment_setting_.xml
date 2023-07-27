@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F7F7F7"
+    style="@style/SCREEN"
     android:layout_height="match_parent"
     tools:context=".setting_Fragment">
 
@@ -22,7 +22,7 @@
            android:layout_marginLeft="15dp"
            android:text="Setting"
            android:textStyle="bold"
-           android:textColor="@color/black"
+           style="@style/TEXT"
            android:textSize="39dp"/>
        <TextView
            android:layout_width="wrap_content"
@@ -32,6 +32,7 @@
            android:layout_marginLeft="15dp"
            android:text="Customise in your own way"
            android:textSize="18dp"
+           style="@style/TEXT"
            android:paddingBottom="30dp"/>
 
        <androidx.cardview.widget.CardView
@@ -39,6 +40,7 @@
            android:layout_height="80dp"
            app:cardCornerRadius="10dp"
            app:cardUseCompatPadding="true"
+           style="@style/CARD"
            android:backgroundTint="#E4E3E3"
            android:id="@+id/card_1">
 
@@ -60,7 +62,7 @@
                   android:layout_height="wrap_content"
                   android:layout_gravity="center_vertical"
                   android:layout_marginLeft="190dp"
-                  android:id="@+id/switch_night"/>
+                  android:id="@+id/switcher_1"/>
 
            </LinearLayout>
 
@@ -70,6 +72,7 @@
            android:layout_width="match_parent"
            android:layout_height="80dp"
            app:cardCornerRadius="10dp"
+           style="@style/CARD"
            app:cardUseCompatPadding="true"
            android:backgroundTint="#E4E3E3"
            android:id="@+id/card_2">
@@ -104,6 +107,7 @@
            app:cardCornerRadius="10dp"
            android:backgroundTint="#E4E3E3"
            app:cardUseCompatPadding="true"
+           style="@style/CARD"
            android:id="@+id/card_5">
 
            <TextView
@@ -123,6 +127,7 @@
            app:cardCornerRadius="10dp"
            android:backgroundTint="#E4E3E3"
            app:cardUseCompatPadding="true"
+           style="@style/CARD"
            android:id="@+id/card_3">
 
            <TextView
@@ -142,7 +147,8 @@
            app:cardCornerRadius="10dp"
            android:backgroundTint="#E4E3E3"
            app:cardUseCompatPadding="true"
-           android:id="@+id/card_4">
+           android:id="@+id/card_4"
+           style="@style/CARD">
 
            <TextView
                android:layout_width="match_parent"
