@@ -8,13 +8,32 @@
     android:background="#F7F7F7"
     tools:context=".saved_Fragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
         android:text="Downloads"
-        android:textColor="#050505"
-        android:textStyle="italic"
-        android:textSize="40dp"
-        android:layout_gravity="center"/>
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="39dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="22dp"
+            android:layout_marginLeft="15dp"
+            android:text="Here is your saved Images and Vedio"
+            android:textSize="18dp"
+            android:paddingBottom="30dp"/>
+
+    </LinearLayout>
 
 </FrameLayout>
