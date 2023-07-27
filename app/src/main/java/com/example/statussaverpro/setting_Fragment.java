@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 public class setting_Fragment extends Fragment {
 
-    CardView card_3,card_4;
+    CardView card_3,card_4,card_5;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -23,6 +23,16 @@ public class setting_Fragment extends Fragment {
 
         card_3 = view.findViewById(R.id.card_3);
         card_4 = view.findViewById(R.id.card_4);
+        card_5 = view.findViewById(R.id.card_5);
+
+        card_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent iprivacy = new Intent(getActivity(), Privacy_policy.class);
+                startActivity(iprivacy);
+            }
+        });
 
         card_3.setOnClickListener(new View.OnClickListener() {
             @Override
