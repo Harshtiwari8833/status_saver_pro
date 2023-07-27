@@ -9,6 +9,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +38,8 @@ public class setting_Fragment extends Fragment {
 
         switcher_1 = view.findViewById(R.id.switcher_1);
 
+
+
        sharedPreferences = getContext().getSharedPreferences("MODE", Context.MODE_PRIVATE);
         nightMode = sharedPreferences.getBoolean("night", false);
 
@@ -52,12 +56,26 @@ public class setting_Fragment extends Fragment {
                     editor = sharedPreferences.edit();
                     editor.putBoolean("night",false);
 
+                    FragmentManager fm = requireActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    transaction.add(R.id.frame, new setting_Fragment());
+                    transaction.commit();
+
+
                 }else{
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     editor = sharedPreferences.edit();
                     editor.putBoolean("night", true);
+
+                    FragmentManager fm = requireActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    transaction.add(R.id.frame, new setting_Fragment());
+                    transaction.commit();
+
                 }
                 editor.apply();
+
+
             }
         });
 
