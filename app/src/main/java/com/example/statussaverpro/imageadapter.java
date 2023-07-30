@@ -2,6 +2,8 @@ package com.example.statussaverpro;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import com.google.gson.Gson;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
@@ -46,6 +48,7 @@ public class imageadapter extends RecyclerView.Adapter<imageadapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         final Status status = imagesList.get(position);
+
         if (status.isApi30()) {
 //            holder.save.setVisibility(View.GONE);
             Glide.with(context).load(status.getDocumentFile().getUri()).into(holder.image_cardview);
@@ -61,6 +64,26 @@ public class imageadapter extends RecyclerView.Adapter<imageadapter.ViewHolder> 
                Toast.makeText(context, "Image saved :)", Toast.LENGTH_SHORT).show();
            }
        });
+
+        Intent intent = new Intent(context, OpenImageActivity.class);
+
+        holder.image_cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (status.isApi30()) {
+                    intent.putExtra("img", status.getDocumentFile().getUri().toString());
+                    intent.putExtra("statusObject", status);
+
+                } else {
+                    intent.putExtra("img", status.getFile().toString());
+                    intent.putExtra("download",status.toString());
+                    intent.putExtra("statusObject", status);
+                }
+                context.startActivity(intent);
+            }
+        });
+
+
 
     }
 

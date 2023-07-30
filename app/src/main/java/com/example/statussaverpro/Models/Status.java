@@ -1,11 +1,15 @@
 package com.example.statussaverpro.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.documentfile.provider.DocumentFile;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Status {
+public class Status implements Parcelable {
 
     private File file;
     private String title;
@@ -76,4 +80,36 @@ public class Status {
     public void setVideo(boolean video) {
         isVideo = video;
     }
+    public Status(/* Your constructor parameters here */) {
+        // Initialization of class members here
+    }
+
+    // Parcelable implementation
+    protected Status(Parcel in) {
+        // Read data from the parcel and assign it to the class members
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        // Write class data to the parcel
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    // Parcelable CREATOR
+    public static final Parcelable.Creator<Status> CREATOR = new Parcelable.Creator<Status>() {
+        @Override
+        public Status createFromParcel(Parcel in) {
+            return new Status(in);
+        }
+
+        @Override
+        public Status[] newArray(int size) {
+            return new Status[size];
+        }
+    };
 }
+

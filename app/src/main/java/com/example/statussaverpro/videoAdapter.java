@@ -1,6 +1,7 @@
 package com.example.statussaverpro;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,22 @@ public class videoAdapter extends  RecyclerView.Adapter<videoAdapter.ViewHolder>
                 Toast.makeText(context, "Video saved :)", Toast.LENGTH_SHORT).show();
             }
         });
+        Intent intent = new Intent(context, OpenVideoActivity.class);
+        holder.image_cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (status.isApi30()) {
+                    intent.putExtra("Video", status.getDocumentFile().getUri().toString());
+                    intent.putExtra("statusObject", status);
+
+                } else {
+                    intent.putExtra("Video", status.getFile().toString());
+                    intent.putExtra("download",status.toString());
+                    intent.putExtra("statusObject", status);
+                }
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -63,6 +80,8 @@ public class videoAdapter extends  RecyclerView.Adapter<videoAdapter.ViewHolder>
             super(itemView);
             image_cardview = itemView.findViewById(R.id.wall_img);
             download = itemView.findViewById(R.id.download);
+
+
         }
     }
 }

@@ -14,6 +14,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.VoicemailContract;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
@@ -46,7 +47,7 @@ public class Common {
     public static String APP_DIR;
 
     public static void copyFile(Status status, Context context) {
-
+        Toast.makeText(context, status.toString(), Toast.LENGTH_SHORT).show();
         File file = new File(Common.APP_DIR);
         if (!file.exists()) {
             if (!file.mkdirs()) {
