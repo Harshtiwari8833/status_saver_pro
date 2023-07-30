@@ -15,6 +15,7 @@
         android:text="Status Saver"
         android:layout_marginLeft="80dp"
         android:textStyle="italic"
+        android:textColor="@color/black"
         android:textSize="35dp"
         android:layout_gravity="center"/>
 
