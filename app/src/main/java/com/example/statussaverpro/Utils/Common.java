@@ -38,7 +38,7 @@ import java.util.Random;
 public class Common {
     public static final int GRID_COUNT = 2;
 
-    private static final String CHANNEL_NAME = "GAUTHAM";
+    private static final String CHANNEL_NAME = "HARSH";
 
     public static final File STATUS_DIRECTORY = new File(Environment.getExternalStorageDirectory() +
             File.separator + "WhatsApp/Media/.Statuses");
@@ -104,8 +104,8 @@ public class Common {
                 destFile.setLastModified(System.currentTimeMillis());
                 new SingleMediaScanner(context, file);
 
-                Uri data = FileProvider.getUriForFile(context, "a.gautham.statusdownloader.provider",
-                        new File(destFile.getAbsolutePath()));
+//                Uri data = FileProvider.getUriForFile(context, "a.gautham.statusdownloader.provider",
+//                        new File(destFile.getAbsolutePath()));
 
 //                showNotification(context, container, status, fileName, data);
             }
