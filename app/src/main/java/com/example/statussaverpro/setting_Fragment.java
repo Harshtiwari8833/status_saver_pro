@@ -41,43 +41,36 @@ public class setting_Fragment extends Fragment {
 
 
        sharedPreferences = getContext().getSharedPreferences("MODE", Context.MODE_PRIVATE);
-        nightMode = sharedPreferences.getBoolean("night", false);
+       nightMode = sharedPreferences.getBoolean("night", false);
 
-//        if(nightMode){
-//            switcher_1.setChecked(true);
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//        }
-//
-//        switcher_1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(nightMode){
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//                    editor = sharedPreferences.edit();
-//                    editor.putBoolean("night",false);
-//
-//                    FragmentManager fm = requireActivity().getSupportFragmentManager();
-//                    FragmentTransaction transaction = fm.beginTransaction();
-//                    transaction.add(R.id.frame, new setting_Fragment());
-//                    transaction.commit();
-//
-//
-//                }else{
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//                    editor = sharedPreferences.edit();
-//                    editor.putBoolean("night", true);
-//
-//                    FragmentManager fm = requireActivity().getSupportFragmentManager();
-//                    FragmentTransaction transaction = fm.beginTransaction();
-//                    transaction.add(R.id.frame, new setting_Fragment());
-//                    transaction.commit();
-//
-//                }
-//                editor.apply();
-//
-//
-//            }
-//        });
+       if(nightMode){
+           switcher_1.setChecked(true);
+           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else {
+           switcher_1.setChecked(false);
+           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+       }
+
+        switcher_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(nightMode){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    editor = sharedPreferences.edit();
+                    editor.putBoolean("night",false);
+
+
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    editor = sharedPreferences.edit();
+                    editor.putBoolean("night", true);
+
+                }
+
+                editor.apply();
+
+            }
+        });
 
 
 
