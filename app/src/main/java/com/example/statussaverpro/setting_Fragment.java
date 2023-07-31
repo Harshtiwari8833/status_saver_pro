@@ -51,9 +51,10 @@ public class setting_Fragment extends Fragment {
            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
        }
 
-        switcher_1.setOnClickListener(new View.OnClickListener() {
+        switcher_1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
                 if(nightMode){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     editor = sharedPreferences.edit();
