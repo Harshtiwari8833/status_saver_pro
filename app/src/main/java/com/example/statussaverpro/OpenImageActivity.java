@@ -31,15 +31,36 @@ import java.util.Locale;
 
 public class OpenImageActivity extends AppCompatActivity {
 ImageView image;
+
     Status status;
-Button downloadBtn;
+Button downloadBtn, share;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_image);
         image = findViewById(R.id.image);
+        share = findViewById(R.id.share);
         downloadBtn = findViewById(R.id.button);
         Intent intent = getIntent();
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                status = intent.getParcelableExtra("statusObject");
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+
+                shareIntent.setType("image/jpg");
+
+                if (status.isApi30()) {
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, status.getDocumentFile().getUri());
+                } else {
+//                    shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + status.getFile().getAbsolutePath()));
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(getIntent().getStringExtra("img")));
+                }
+
+                startActivity(Intent.createChooser(shareIntent, "Share image"));
+            }
+        });
         if (intent != null && intent.hasExtra("statusObject")) {
             status = intent.getParcelableExtra("statusObject");
             downloadBtn.setOnClickListener(new View.OnClickListener() {

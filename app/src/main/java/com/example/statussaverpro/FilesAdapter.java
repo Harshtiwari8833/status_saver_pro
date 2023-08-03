@@ -63,6 +63,7 @@ public class FilesAdapter extends  RecyclerView.Adapter<FilesAdapter.ViewHolder>
             super(itemView);
             image_cardview = itemView.findViewById(R.id.wall_img);
             download = itemView.findViewById(R.id.download);
+
         }
     }
 }

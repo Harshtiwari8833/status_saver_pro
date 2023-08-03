@@ -31,7 +31,7 @@ import java.util.Locale;
 
 public class OpenVideoActivity extends AppCompatActivity {
 VideoView video;
-Button downloadbtn;
+Button downloadbtn, share;
     Status status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,27 @@ Button downloadbtn;
         setContentView(R.layout.activity_open_video);
         video = findViewById(R.id.video);
         downloadbtn = findViewById(R.id.button2);
+        share = findViewById(R.id.share);
+        Intent intent = getIntent();
 
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                status = intent.getParcelableExtra("statusObject");
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+
+                shareIntent.setType("image/mp4");
+
+                if (status.isApi30()) {
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, status.getDocumentFile().getUri());
+                } else {
+//                    shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + status.getFile().getAbsolutePath()));
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(getIntent().getStringExtra("Video")));
+                }
+
+                startActivity(Intent.createChooser(shareIntent, "Share image"));
+            }
+        });
         final MediaController mediaController = new MediaController(OpenVideoActivity.this, false);
 
         video.setOnPreparedListener(mp -> {
@@ -56,8 +76,6 @@ Button downloadbtn;
 
 
         //download video
-
-        Intent intent = getIntent();
         if (intent != null && intent.hasExtra("statusObject")) {
             status = intent.getParcelableExtra("statusObject");
             downloadbtn.setOnClickListener(new View.OnClickListener() {
