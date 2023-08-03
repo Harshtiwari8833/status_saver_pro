@@ -48,7 +48,7 @@ public class imageadapter extends RecyclerView.Adapter<imageadapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         final Status status = imagesList.get(position);
-
+         holder.play.setVisibility(View.INVISIBLE);
         if (status.isApi30()) {
 //            holder.save.setVisibility(View.GONE);
             Glide.with(context).load(status.getDocumentFile().getUri()).into(holder.image_cardview);
@@ -93,11 +93,12 @@ public class imageadapter extends RecyclerView.Adapter<imageadapter.ViewHolder> 
     }
 
     public class ViewHolder  extends RecyclerView.ViewHolder {
-        ImageView image_cardview, download;
+        ImageView image_cardview, download, play;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image_cardview = itemView.findViewById(R.id.wall_img);
             download = itemView.findViewById(R.id.download);
+            play  = itemView.findViewById(R.id.play);
 
         }
     }
