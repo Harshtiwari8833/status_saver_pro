@@ -34,7 +34,7 @@ public class FilesAdapter extends  RecyclerView.Adapter<FilesAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull FilesAdapter.ViewHolder holder, int position) {
-        holder.download.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_baseline_delete_24));
+        holder.download.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.delete));
         final Status status = imagesList.get(position);
         if (status.isApi30()) {
             Glide.with(context).load(status.getDocumentFile().getUri()).into(holder.image_cardview);

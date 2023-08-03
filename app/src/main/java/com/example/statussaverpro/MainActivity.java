@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     loadfrag(new saved_Fragment(), false);
                 } else {
                     resourceId = R.id.setting;
-                    loadfrag(new setting_Fragment(), true);
+                    loadfrag(new setting_Fragment(), false);
                 }
 
                 return true;
