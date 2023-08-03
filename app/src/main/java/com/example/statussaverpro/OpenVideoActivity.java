@@ -45,7 +45,7 @@ Button downloadbtn, share;
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                status = intent.getParcelableExtra("statusObject");
+                status = intent.getParcelableExtra("statusObject1");
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
 
                 shareIntent.setType("image/mp4");
@@ -57,7 +57,7 @@ Button downloadbtn, share;
                     shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(getIntent().getStringExtra("Video")));
                 }
 
-                startActivity(Intent.createChooser(shareIntent, "Share image"));
+                startActivity(Intent.createChooser(shareIntent, "Share Video"));
             }
         });
         final MediaController mediaController = new MediaController(OpenVideoActivity.this, false);
@@ -76,8 +76,8 @@ Button downloadbtn, share;
 
 
         //download video
-        if (intent != null && intent.hasExtra("statusObject")) {
-            status = intent.getParcelableExtra("statusObject");
+        if (intent != null && intent.hasExtra("statusObject1")) {
+            status = intent.getParcelableExtra("statusObject1");
             downloadbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -93,11 +93,7 @@ Button downloadbtn, share;
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
                     String currentDateTime = sdf.format(new Date());
 
-                    if (status.isVideo()) {
                         fileName = "VID_" + currentDateTime + ".mp4";
-                    } else {
-                        fileName = "IMG_" + currentDateTime + ".jpg";
-                    }
 
                     File destFile = new File(file + File.separator + fileName);
 
@@ -114,33 +110,24 @@ Button downloadbtn, share;
                                     Environment.DIRECTORY_DCIM + "/status_saver");
 
                             Uri collectionUri;
-                            if (status.isVideo()) {
+
+
                                 values.put(MediaStore.MediaColumns.MIME_TYPE, "video/*");
                                 collectionUri = MediaStore.Video.Media.getContentUri(
                                         MediaStore.VOLUME_EXTERNAL_PRIMARY);
-                            } else {
-                                values.put(MediaStore.MediaColumns.MIME_TYPE, "image/*");
-                                collectionUri = MediaStore.Images.Media.getContentUri(
-                                        MediaStore.VOLUME_EXTERNAL_PRIMARY);
-                            }
+
 
                             destinationUri = getContentResolver().insert(collectionUri, values);
-
                             InputStream inputStream = getContentResolver().openInputStream(Uri.parse(getIntent().getStringExtra("Video")));
                             OutputStream outputStream = getContentResolver().openOutputStream(destinationUri);
                             IOUtils.copy(inputStream, outputStream);
-
-
-
                         } else {
+
                             org.apache.commons.io.FileUtils.copyFile(status.getFile(), destFile);
                             //noinspection ResultOfMethodCallIgnored
                             destFile.setLastModified(System.currentTimeMillis());
                             new SingleMediaScanner(OpenVideoActivity.this, file);
-
-
                         }
-
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

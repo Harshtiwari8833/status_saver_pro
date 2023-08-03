@@ -57,12 +57,12 @@ public class videoAdapter extends  RecyclerView.Adapter<videoAdapter.ViewHolder>
             public void onClick(View view) {
                 if (status.isApi30()) {
                     intent.putExtra("Video", status.getDocumentFile().getUri().toString());
-                    intent.putExtra("statusObject", status);
+                    intent.putExtra("statusObject1", status);
 
                 } else {
                     intent.putExtra("Video", status.getFile().toString());
                     intent.putExtra("download",status.toString());
-                    intent.putExtra("statusObject", status);
+                    intent.putExtra("statusObject1", status);
                 }
                 context.startActivity(intent);
             }
