@@ -41,9 +41,8 @@ public class setting_Fragment extends Fragment {
 
         switcher_1 = view.findViewById(R.id.switcher_1);
 
-        settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
-
-      /*  settingViewModel.getNightModeLiveData().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+        /* settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
+         settingViewModel.getNightModeLiveData().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean nightMode) {
                 // Update the UI elements here based on the night mode state
@@ -59,7 +58,9 @@ public class setting_Fragment extends Fragment {
             }
         }); */
 
-        sharedPreferences = getContext().getSharedPreferences("MODE", Context.MODE_PRIVATE);
+
+
+        sharedPreferences = getActivity().getSharedPreferences("MODE", Context.MODE_PRIVATE);
         nightMode = sharedPreferences.getBoolean("night", false);
 
        if(nightMode){

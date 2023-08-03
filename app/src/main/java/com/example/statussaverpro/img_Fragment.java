@@ -3,11 +3,14 @@ package com.example.statussaverpro;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.UriPermission;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.documentfile.provider.DocumentFile;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -44,6 +47,9 @@ public class img_Fragment extends Fragment {
 
   RecyclerView recycler;
    imageadapter adapter;
+
+    boolean nightMode;
+    SharedPreferences sharedPreferences;
     private final List<Status> imagesList = new ArrayList<>();
      SwipeRefreshLayout refresh;
 
@@ -55,6 +61,15 @@ public class img_Fragment extends Fragment {
         recycler = v.findViewById(R.id.recycler);
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
+
+        sharedPreferences = getActivity().getSharedPreferences("MODE", Context.MODE_PRIVATE);
+        nightMode = sharedPreferences.getBoolean("night", false);
+
+        if(nightMode==true){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
 
  refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
