@@ -65,10 +65,10 @@ public class setting_Fragment extends Fragment {
        if(nightMode){
            switcher_1.setChecked(true);
            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }/*else {
+        }else {
            switcher_1.setChecked(false);
            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-       }*/
+       }
 
         switcher_1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
