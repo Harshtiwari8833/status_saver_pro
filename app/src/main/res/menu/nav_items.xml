@@ -3,7 +3,7 @@
 
     <item android:id="@+id/img"
         android:title="Images"
-        android:icon="@drawable/image"/>
+        android:icon="@drawable/image" />
 
     <item android:id="@+id/vedio"
         android:title="Videos"
@@ -11,10 +11,11 @@
 
     <item android:id="@+id/save"
         android:title="Saved"
-        android:icon="@drawable/downloading"/>
+        android:icon="@drawable/download"/>
 
     <item android:id="@+id/setting"
         android:title="Setting"
-        android:icon="@drawable/settings"/>
+        android:icon="@drawable/settings"
+        android:iconTint="@color/white"/>
 
 </menu>

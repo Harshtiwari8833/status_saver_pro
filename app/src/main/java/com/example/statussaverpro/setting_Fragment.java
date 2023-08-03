@@ -9,9 +9,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,8 @@ public class setting_Fragment extends Fragment {
     boolean nightMode;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+
+    SettingViewModel settingViewModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,10 +41,27 @@ public class setting_Fragment extends Fragment {
 
         switcher_1 = view.findViewById(R.id.switcher_1);
 
+        /* settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
+         settingViewModel.getNightModeLiveData().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean nightMode) {
+                // Update the UI elements here based on the night mode state
+                if (nightMode) {
+                    // Apply night mode
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    // Apply day mode
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+                // Update the switch state in the adapter (if needed)
+                settingViewModel.setNightMode(nightMode);
+            }
+        }); */
 
 
-       sharedPreferences = getContext().getSharedPreferences("MODE", Context.MODE_PRIVATE);
-       nightMode = sharedPreferences.getBoolean("night", false);
+
+        sharedPreferences = getActivity().getSharedPreferences("MODE", Context.MODE_PRIVATE);
+        nightMode = sharedPreferences.getBoolean("night", false);
 
        if(nightMode){
            switcher_1.setChecked(true);

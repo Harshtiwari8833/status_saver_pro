@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView btm_nav;
     private long back_pressed;
 
-
     private static final int REQUEST_PERMISSIONS = 1234;
     private static final String[] PERMISSIONS = {
             Manifest.permission.READ_EXTERNAL_STORAGE,

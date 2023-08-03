@@ -38,8 +38,8 @@
 
        <androidx.cardview.widget.CardView
            android:layout_width="match_parent"
-           android:layout_height="80dp"
-           app:cardCornerRadius="10dp"
+           android:layout_height="90dp"
+           app:cardCornerRadius="15dp"
            app:cardUseCompatPadding="true"
            style="@style/CARD"
            android:backgroundTint="#E4E3E3"
@@ -69,43 +69,12 @@
 
        </androidx.cardview.widget.CardView>
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="match_parent"
-           android:layout_height="80dp"
-           app:cardCornerRadius="10dp"
-           style="@style/CARD"
-           app:cardUseCompatPadding="true"
-           android:backgroundTint="#E4E3E3"
-           android:id="@+id/card_2">
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent">
-
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:textSize="25dp"
-                   android:text="Grid layout"
-                   android:textColor="@color/black"
-                   android:layout_gravity="center_vertical"
-                   android:layout_marginLeft="10dp"/>
-
-               <Switch
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_gravity="center_vertical"
-                   android:layout_marginLeft="200dp"
-                   android:id="@+id/switch_grid"/>
-
-           </LinearLayout>
-
-       </androidx.cardview.widget.CardView>
 
        <androidx.cardview.widget.CardView
            android:layout_width="match_parent"
-           android:layout_height="80dp"
-           app:cardCornerRadius="10dp"
+           android:layout_height="90dp"
+           app:cardCornerRadius="15dp"
            android:backgroundTint="#E4E3E3"
            app:cardUseCompatPadding="true"
            style="@style/CARD"
@@ -124,8 +93,8 @@
 
        <androidx.cardview.widget.CardView
            android:layout_width="match_parent"
-           android:layout_height="80dp"
-           app:cardCornerRadius="10dp"
+           android:layout_height="90dp"
+           app:cardCornerRadius="15dp"
            android:backgroundTint="#E4E3E3"
            app:cardUseCompatPadding="true"
            style="@style/CARD"
@@ -144,8 +113,8 @@
 
        <androidx.cardview.widget.CardView
            android:layout_width="match_parent"
-           android:layout_height="80dp"
-           app:cardCornerRadius="10dp"
+           android:layout_height="90dp"
+           app:cardCornerRadius="15dp"
            android:backgroundTint="#E4E3E3"
            app:cardUseCompatPadding="true"
            android:id="@+id/card_4"

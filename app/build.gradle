@@ -43,4 +43,6 @@ dependencies {
     implementation "org.apache.commons:commons-lang3:3.5"
     implementation"commons-io:commons-io:2.13.0"
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-beta01'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
+
 }
