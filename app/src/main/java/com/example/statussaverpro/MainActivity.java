@@ -45,7 +45,9 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import java.util.List;
 import java.util.Objects;
 
+
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG="MainActivity";
 
     BottomNavigationView btm_nav;
     private long back_pressed;
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int NOTIFICATION_REQUEST_PERMISSIONS = 4;
 
     private Context context;
+
+    private int resourceId = R.id.img;
 
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -100,12 +104,16 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.img) {
+                    resourceId = R.id.img;
                     loadfrag(new img_Fragment(), false);
                 } else if (id == R.id.vedio) {
+                    resourceId = R.id.video;
                     loadfrag(new vedio_Fragment(), false);
                 } else if (id == R.id.save) {
+                    resourceId = R.id.save;
                     loadfrag(new saved_Fragment(), false);
                 } else {
+                    resourceId = R.id.setting;
                     loadfrag(new setting_Fragment(), true);
                 }
 
@@ -113,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btm_nav.setSelectedItemId(R.id.img);
-
+        btm_nav.setSelectedItemId(resourceId);
+        Log.d(TAG, "onCreate: "+ resourceId);
     }
 
 
@@ -207,6 +215,31 @@ public class MainActivity extends AppCompatActivity {
 
 
         activityResultLauncher.launch(intent);
+    }
+
+    @Override
+    protected final void onRestoreInstanceState(final Bundle inState) {
+        Log.d(TAG, "onRestoreInstanceState: ");
+        // Restore the saved variables.
+        resourceId = inState.getInt("fragmentType", R.id.img);
+        if (resourceId == R.id.img) {
+            loadfrag(new img_Fragment(), false);
+        } else if (resourceId == R.id.vedio) {
+            loadfrag(new vedio_Fragment(), false);
+        } else if (resourceId == R.id.save) {
+            loadfrag(new saved_Fragment(), false);
+        } else {
+            loadfrag(new setting_Fragment(), true);
+        }
+        btm_nav.setSelectedItemId(resourceId);
+    }
+
+    @Override
+    protected final void onSaveInstanceState(final Bundle outState) {
+        Log.d(TAG, "onSaveInstanceState: ");
+        // Save the variables.
+        outState.putInt("fragmentType", resourceId);
+        super.onSaveInstanceState(outState);
     }
 
 

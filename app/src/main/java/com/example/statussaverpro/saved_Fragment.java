@@ -103,7 +103,9 @@ public class saved_Fragment extends Fragment {
                     handler.post(() -> {
 //                        progressBar.setVisibility(View.GONE);
 //                        no_files_found.setVisibility(View.VISIBLE);
-                                Toast.makeText(getContext(), "Dir doest not exists!", Toast.LENGTH_SHORT).show();
+                        if(isAdded()){
+                            Toast.makeText(getContext(), "Dir doest not exists!", Toast.LENGTH_SHORT).show();
+                        }
                     });
 
                 }
