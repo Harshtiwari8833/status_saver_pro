@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.StatusSaverPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorSecondary">@color/material_dynamic_secondary10</item>
+        <item name="colorSecondaryVariant">#1B2B39</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
@@ -18,7 +18,7 @@
     <!-- Screen background if dark mode is ON -->
 
     <style name="SCREEN">
-        <item name="android:background">#2B2C2C</item>
+        <item name="android:background">#0A1A29</item>
     </style>
 
     <!-- Text colour if dark mode is ON -->
@@ -28,9 +28,10 @@
 
     <!-- CardView if dark mode is ON -->
     <style name="CARD">
-        <item name="android:background">#E4E3E3</item>
+        <item name="android:background">#F8F6F6</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
 
 
 </resources>
