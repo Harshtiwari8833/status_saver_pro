@@ -20,5 +20,155 @@
         style="@style/TEXT"
         android:textSize="39dp"/>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="MaverickBits built the WhatsApp Status Saver app as a Free app. This service is provided by MaverickBits at no cost and is intended for its use."
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Our Privacy Policy explains how we collect, use, and disclose information about users of the WhatsApp Status Saver Android Application . By using the App, you agree to the terms of this Privacy Policy."
+                android:padding="10dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1. Information Collection and Use:
+"               android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="We do not collect any personal information from users of the App. The App is designed to allow you to save and access your WhatsApp status updates locally on your device. We do not track, store, or analyze any data related to your WhatsApp activities, including status updates or messages."
+                android:layout_marginLeft="15dp"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2. Device Permissions:"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="The App may require certain permissions to function properly on your Android device. These permissions may include accessing your storage to save and access WhatsApp status updates. We do not use these permissions to access or collect any other information from your device."
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3. Advertising and Third-Party Services:"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="The App does not display any third-party advertisements, and we do not integrate any third-party services that may collect your personal information. Your interactions with the App are limited to the core functionality of saving and accessing WhatsApp status updates."
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="4. Security:"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="We take reasonable measures to protect the data stored within the App on your device. However, it is essential for you to safeguard your device with a secure lock screen or password to prevent unauthorized access to your WhatsApp statuses and other data."
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="5. Children's Privacy:"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="The App is not intended for use by individuals under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected personal information from a child under the age of 13, we will take reasonable steps to delete such information."
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="6. Changes to the Privacy Policy:"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="We may update this Privacy Policy from time to time. The most current version will be reflected in the App and will be effective immediately upon posting. Your continued use of the App after any such changes constitutes your acceptance of the new Privacy Policy."
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="7. Contact Us:"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at maverickbits.official@gmail.com"
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Please note that this Privacy Policy only applies to the WhatsApp Status Saver Android Application and not to any other third-party websites or applications that you may access through links within the App. We encourage you to review the privacy policies of those third-party services before providing them with any personal information."
+                android:padding="10dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="By downloading, installing, and using the WhatsApp Status Saver Android Application, you acknowledge that you have read and understood this Privacy Policy and agree to be bound by its terms and conditions."
+                android:padding="10dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="7dp"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

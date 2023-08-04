@@ -20,6 +20,9 @@
         android:theme="@style/Theme.StatusSaverPro"
         tools:targetApi="31">
         <activity
+            android:name=".about"
+            android:exported="false" />
+        <activity
             android:name=".SaveOpenVideoActivity"
             android:exported="false" />
         <activity
