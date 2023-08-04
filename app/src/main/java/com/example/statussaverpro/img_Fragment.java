@@ -98,7 +98,7 @@ public class img_Fragment extends Fragment {
             no_files_found.setVisibility(View.VISIBLE);
 //            messageTextView.setText(R.string.cant_find_whatsapp_dir);
 //            Toast.makeText(getActivity(), getString(R.string.cant_find_whatsapp_dir), Toast.LENGTH_SHORT).show();
-//            swipeRefreshLayout.setRefreshing(false);
+            refresh.setRefreshing(false);
         }
 
     }
@@ -168,6 +168,19 @@ public class img_Fragment extends Fragment {
             try {
                 List<UriPermission> list = requireActivity().getContentResolver().getPersistedUriPermissions();
                 DocumentFile file = DocumentFile.fromTreeUri(requireActivity(), list.get(0).getUri());
+
+                imagesList.clear();
+
+                if (file == null) {
+                    mainHandler.post(() -> {
+//                        progressBar.setVisibility(View.GONE);
+                        no_files_found.setVisibility(View.VISIBLE);
+//                        messageTextView.setText(R.string.no_files_found);
+
+                        refresh.setRefreshing(false);
+                    });
+                    return;
+                }
                 DocumentFile[] statusFiles = file.listFiles();
                 if (statusFiles.length <= 0) {
                     mainHandler.post(() -> {
