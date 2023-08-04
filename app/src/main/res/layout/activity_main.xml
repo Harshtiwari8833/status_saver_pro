@@ -36,7 +36,7 @@
             android:theme="@style/Widget.AppCompat.Light.ActionBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="WhatsApp Status Saver"
+            app:title="Status Saver"
             >
 
         </androidx.appcompat.widget.Toolbar>
