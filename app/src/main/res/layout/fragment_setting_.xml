@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -36,49 +36,68 @@
            style="@style/TEXT"
            android:paddingBottom="30dp"/>
 
-       <androidx.cardview.widget.CardView
+       <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="90dp"
-           app:cardCornerRadius="15dp"
-           app:cardUseCompatPadding="true"
+           android:layout_height="80dp"
+           android:paddingVertical="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_marginHorizontal="15dp"
+           android:id="@+id/card_1"
            style="@style/CARD"
-           android:backgroundTint="#E4E3E3"
-           android:id="@+id/card_1">
+           android:background="@drawable/profilebg"
+           android:orientation="vertical">
 
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="match_parent">
 
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:textSize="25dp"
-                   android:text="Night Mode"
-                   android:textColor="@color/black"
-                   android:layout_gravity="center_vertical"
-                   android:layout_marginLeft="10dp"/>
+               <LinearLayout
+                   android:layout_width="250dp"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textSize="25dp"
+                       android:text="Night Mode"
+                       android:textColor="@color/black"
+                       android:layout_marginLeft="15dp"/>
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="Apply dark theme on app "
+                       android:gravity="center_vertical"
+                       android:layout_marginLeft="15dp"
+                       android:textColor="@color/black"
+                       android:textSize="14dp"/>
+
+               </LinearLayout>
 
               <Switch
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_gravity="center_vertical"
-                  android:layout_marginLeft="190dp"
+                  android:layout_marginLeft="60dp"
                   android:id="@+id/switcher_1"/>
 
            </LinearLayout>
 
-       </androidx.cardview.widget.CardView>
+       </LinearLayout>
 
 
 
-       <androidx.cardview.widget.CardView
+       <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="90dp"
-           app:cardCornerRadius="15dp"
-           android:backgroundTint="#E4E3E3"
-           app:cardUseCompatPadding="true"
+           android:layout_height="80dp"
+           android:paddingVertical="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_marginHorizontal="15dp"
+           android:id="@+id/card_5"
            style="@style/CARD"
-           android:id="@+id/card_5">
+           android:background="@drawable/profilebg"
+           android:orientation="vertical">
 
            <TextView
                android:layout_width="match_parent"
@@ -87,18 +106,61 @@
                android:textColor="@color/black"
                android:textSize="25dp"
                android:layout_gravity="center_vertical"
-               android:layout_marginLeft="10dp"/>
+               android:layout_marginLeft="15dp"/>
 
-       </androidx.cardview.widget.CardView>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="Check out the details here"
+               android:gravity="center_vertical"
+               android:textColor="@color/black"
+               android:layout_marginLeft="15dp"
+               android:textSize="14dp"/>
 
-       <androidx.cardview.widget.CardView
+       </LinearLayout>
+
+       <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="90dp"
-           app:cardCornerRadius="15dp"
-           android:backgroundTint="#E4E3E3"
-           app:cardUseCompatPadding="true"
+           android:layout_height="80dp"
+           android:paddingVertical="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_marginHorizontal="15dp"
+           android:id="@+id/card_7"
            style="@style/CARD"
-           android:id="@+id/card_3">
+           android:background="@drawable/profilebg"
+           android:orientation="vertical">
+
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="About"
+               android:textColor="@color/black"
+               android:textSize="25dp"
+               android:layout_gravity="center_vertical"
+               android:layout_marginLeft="15dp"/>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="Know more about this application"
+               android:gravity="center_vertical"
+               android:layout_marginLeft="15dp"
+               android:textColor="@color/black"
+               android:textSize="14dp"/>
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:paddingVertical="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_marginHorizontal="15dp"
+           android:id="@+id/card_3"
+           style="@style/CARD"
+           android:background="@drawable/profilebg"
+           android:orientation="vertical">
 
            <TextView
                android:layout_width="match_parent"
@@ -107,18 +169,30 @@
                android:textColor="@color/black"
                android:textSize="25dp"
                android:layout_gravity="center_vertical"
-               android:layout_marginLeft="10dp"/>
+               android:layout_marginLeft="15dp"/>
 
-       </androidx.cardview.widget.CardView>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="Share this amazing app with friends"
+               android:gravity="center_vertical"
+               android:layout_marginLeft="15dp"
+               android:textColor="@color/black"
+               android:textSize="14dp"/>
 
-       <androidx.cardview.widget.CardView
+       </LinearLayout>
+
+       <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="90dp"
-           app:cardCornerRadius="15dp"
-           android:backgroundTint="#E4E3E3"
-           app:cardUseCompatPadding="true"
+           android:layout_height="80dp"
+           android:paddingVertical="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_marginHorizontal="15dp"
            android:id="@+id/card_4"
-           style="@style/CARD">
+           style="@style/CARD"
+           android:background="@drawable/profilebg"
+           android:orientation="vertical">
+
 
            <TextView
                android:layout_width="match_parent"
@@ -127,10 +201,19 @@
                android:textColor="@color/black"
                android:textSize="25dp"
                android:layout_gravity="center_vertical"
-               android:layout_marginLeft="10dp"/>
+               android:layout_marginLeft="15dp"/>
 
-       </androidx.cardview.widget.CardView>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="Rate this app on play store"
+               android:gravity="center_vertical"
+               android:layout_marginLeft="15dp"
+               android:textColor="@color/black"
+               android:textSize="14dp"/>
+
+       </LinearLayout>
 
    </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

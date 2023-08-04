@@ -17,18 +17,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 
 public class setting_Fragment extends Fragment {
 
-    CardView card_3,card_4,card_5;
+    LinearLayout card_3,card_4,card_5,card_7;
     Switch switcher_1;
     boolean nightMode;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
-    SettingViewModel settingViewModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class setting_Fragment extends Fragment {
         card_3 = view.findViewById(R.id.card_3);
         card_4 = view.findViewById(R.id.card_4);
         card_5 = view.findViewById(R.id.card_5);
+        card_7 = view.findViewById(R.id.card_7);
 
         switcher_1 = view.findViewById(R.id.switcher_1);
 
@@ -113,6 +114,15 @@ public class setting_Fragment extends Fragment {
                 iShare.putExtra(Intent.EXTRA_TEXT,"Download this Amazing App, https://play.google.com/store/apps/details?id=one4studio.wallpaper.one4wal");
                 startActivity(Intent.createChooser(iShare,"Share via"));
 
+            }
+        });
+
+        card_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent iAbout = new Intent(getActivity(), about.class);
+                startActivity(iAbout);
             }
         });
 
