@@ -14,6 +14,7 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.statussaverpro.Models.Status;
@@ -31,6 +32,7 @@ public class saved_Fragment extends Fragment {
     private final List<Status> savedFilesList = new ArrayList<>();
     private SwipeRefreshLayout refresh;
     private FilesAdapter filesAdapter;
+    TextView no_files_found;
     private final Handler handler = new Handler();
 
     @Override
@@ -38,6 +40,7 @@ public class saved_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_saved_, container, false);
         recyclerView = view.findViewById(R.id.recycler);
+        no_files_found = view.findViewById(R.id.no);
         refresh = view.findViewById(R.id.refresh);
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -66,7 +69,7 @@ public class saved_Fragment extends Fragment {
         if (app_dir.exists() ||
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
 
-//            no_files_found.setVisibility(View.GONE);
+            no_files_found.setVisibility(View.GONE);
 
             new Thread(() -> {
                 File[] savedFiles;
@@ -102,7 +105,7 @@ public class saved_Fragment extends Fragment {
 
                     handler.post(() -> {
 //                        progressBar.setVisibility(View.GONE);
-//                        no_files_found.setVisibility(View.VISIBLE);
+                        no_files_found.setVisibility(View.VISIBLE);
                         if(isAdded()){
                             Toast.makeText(getContext(), "Dir doest not exists!", Toast.LENGTH_SHORT).show();
                         }
@@ -113,7 +116,7 @@ public class saved_Fragment extends Fragment {
             }).start();
 
         } else {
-//            no_files_found.setVisibility(View.VISIBLE);
+            no_files_found.setVisibility(View.VISIBLE);
 //            progressBar.setVisibility(View.GONE);
         }
 

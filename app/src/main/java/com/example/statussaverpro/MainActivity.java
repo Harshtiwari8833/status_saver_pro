@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (resourceId == R.id.save) {
             loadfrag(new saved_Fragment(), false);
         } else {
-            loadfrag(new setting_Fragment(), true);
+            loadfrag(new setting_Fragment(), false);
         }
         btm_nav.setSelectedItemId(resourceId);
     }

@@ -36,6 +36,7 @@ public class videoAdapter extends  RecyclerView.Adapter<videoAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull videoAdapter.ViewHolder holder, int position) {
         final Status status = videoList.get(position);
+        holder.share.setVisibility(View.INVISIBLE);
         if (status.isApi30()) {
 //            holder.save.setVisibility(View.GONE);
             Glide.with(context).load(status.getDocumentFile().getUri()).into(holder.image_cardview);
@@ -75,12 +76,12 @@ public class videoAdapter extends  RecyclerView.Adapter<videoAdapter.ViewHolder>
     }
 
     public class ViewHolder  extends RecyclerView.ViewHolder{
-        ImageView image_cardview, download;
+        ImageView image_cardview, download,share;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image_cardview = itemView.findViewById(R.id.wall_img);
             download = itemView.findViewById(R.id.download);
-
+            share = itemView.findViewById(R.id.share);
 
         }
     }

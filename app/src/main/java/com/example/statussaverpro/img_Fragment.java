@@ -49,7 +49,7 @@ public class img_Fragment extends Fragment {
    imageadapter adapter;
 
     boolean nightMode;
-    SharedPreferences sharedPreferences;
+
     private final List<Status> imagesList = new ArrayList<>();
      SwipeRefreshLayout refresh;
 
@@ -62,14 +62,9 @@ public class img_Fragment extends Fragment {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
-        sharedPreferences = getActivity().getSharedPreferences("MODE", Context.MODE_PRIVATE);
-        nightMode = sharedPreferences.getBoolean("night", false);
 
-        if(nightMode==true){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+
+
 
 
  refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

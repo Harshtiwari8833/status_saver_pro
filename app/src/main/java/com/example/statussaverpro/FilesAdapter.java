@@ -65,6 +65,22 @@ public class FilesAdapter extends  RecyclerView.Adapter<FilesAdapter.ViewHolder>
                 Toast.makeText(context, "Unable to Delete File", Toast.LENGTH_SHORT).show();
         });
 
+
+        //share
+        holder.share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+
+                if (status.isVideo())
+                    shareIntent.setType("image/mp4");
+                else
+                    shareIntent.setType("image/jpg");
+
+                shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + status.getFile().getAbsolutePath()));
+                context.startActivity(Intent.createChooser(shareIntent, "Share image"));
+            }
+        });
         holder.image_cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -171,12 +187,13 @@ public class FilesAdapter extends  RecyclerView.Adapter<FilesAdapter.ViewHolder>
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView image_cardview, download, play;
+        ImageView image_cardview, download, play, share;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image_cardview = itemView.findViewById(R.id.wall_img);
             download = itemView.findViewById(R.id.download);
             play = itemView.findViewById(R.id.play);
+            share = itemView.findViewById(R.id.share);
         }
     }
 }
