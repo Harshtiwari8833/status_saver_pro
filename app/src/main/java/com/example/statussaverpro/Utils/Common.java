@@ -47,7 +47,7 @@ public class Common {
     public static String APP_DIR;
 
     public static void copyFile(Status status, Context context) {
-        Toast.makeText(context, status.toString(), Toast.LENGTH_SHORT).show();
+
         File file = new File(Common.APP_DIR);
         if (!file.exists()) {
             if (!file.mkdirs()) {

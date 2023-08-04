@@ -30,6 +30,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG="MainActivity";
 
     BottomNavigationView btm_nav;
+    LinearLayout linear;
     private long back_pressed;
 
     private static final int REQUEST_PERMISSIONS = 1234;
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         btm_nav = findViewById(R.id.btm_nav);
 
-
+        linear = findViewById(R.id.linear);
         btm_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -118,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
             }
+
         });
 
         btm_nav.setSelectedItemId(resourceId);
@@ -232,13 +235,23 @@ public class MainActivity extends AppCompatActivity {
         }
         btm_nav.setSelectedItemId(resourceId);
     }
-
     @Override
     protected final void onSaveInstanceState(final Bundle outState) {
         Log.d(TAG, "onSaveInstanceState: ");
         // Save the variables.
         outState.putInt("fragmentType", resourceId);
         super.onSaveInstanceState(outState);
+    }
+    @Override
+    public void onBackPressed() {
+
+        if (back_pressed + 2000 > System.currentTimeMillis()) {
+            finish();
+            moveTaskToBack(true);
+        } else {
+            Snackbar.make(linear, "Press Again to Exit", Snackbar.LENGTH_LONG).show();
+            back_pressed = System.currentTimeMillis();
+        }
     }
 
 

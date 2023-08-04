@@ -46,13 +46,13 @@ import java.util.concurrent.Executors;
 
 public class img_Fragment extends Fragment {
 
-  RecyclerView recycler;
-   imageadapter adapter;
-  TextView  no_files_found;
+    RecyclerView recycler;
+    imageadapter adapter;
+    TextView no_files_found;
     boolean nightMode;
 
     private final List<Status> imagesList = new ArrayList<>();
-     SwipeRefreshLayout refresh;
+    SwipeRefreshLayout refresh;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,8 +80,9 @@ public class img_Fragment extends Fragment {
         recycler.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         getStatus();
-        return  v;
+        return v;
     }
+
 
     private void getStatus() {
 
@@ -164,48 +165,38 @@ public class img_Fragment extends Fragment {
 
         Executors.newSingleThreadExecutor().execute(() -> {
             Handler mainHandler = new Handler(Looper.getMainLooper());
-
-            List<UriPermission> list = requireActivity().getContentResolver().getPersistedUriPermissions();
-
-            DocumentFile file = DocumentFile.fromTreeUri(requireActivity(), list.get(0).getUri());
-
-            imagesList.clear();
-
-            if (file == null) {
-                mainHandler.post(() -> {
+            try {
+                List<UriPermission> list = requireActivity().getContentResolver().getPersistedUriPermissions();
+                DocumentFile file = DocumentFile.fromTreeUri(requireActivity(), list.get(0).getUri());
+                DocumentFile[] statusFiles = file.listFiles();
+                if (statusFiles.length <= 0) {
+                    mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-                    no_files_found.setVisibility(View.VISIBLE);
+                        no_files_found.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
-//                    Toast.makeText(getActivity(), getString(R.string.no_files_found), Toast.LENGTH_SHORT).show();
-                    refresh.setRefreshing(false);
-                });
-                return;
-            }
-
-            DocumentFile[] statusFiles = file.listFiles();
-
-            if (statusFiles.length <= 0) {
-                mainHandler.post(() -> {
-//                    progressBar.setVisibility(View.GONE);
-                    no_files_found.setVisibility(View.VISIBLE);
-//                    messageTextView.setText(R.string.no_files_found);
-                    Toast.makeText(getActivity(), "no file found", Toast.LENGTH_SHORT).show();
-                    refresh.setRefreshing(false);
-                });
-                return;
-            }
-
-            for (DocumentFile documentFile : statusFiles) {
-
-                if (Objects.requireNonNull(documentFile.getName()).contains(".nomedia"))
-                    continue;
-
-                Status status = new Status(documentFile);
-
-                if (!status.isVideo()) {
-                    imagesList.add(status);
+                        Toast.makeText(getActivity(), "no file found", Toast.LENGTH_SHORT).show();
+                        refresh.setRefreshing(false);
+                    });
+                    return;
                 }
+
+                for (DocumentFile documentFile : statusFiles) {
+
+                    if (Objects.requireNonNull(documentFile.getName()).contains(".nomedia"))
+                        continue;
+
+                    Status status = new Status(documentFile);
+
+                    if (!status.isVideo()) {
+                        imagesList.add(status);
+                    }
+                }
+
+            }catch (Exception e){
+                e.printStackTrace();
             }
+
+
 
             mainHandler.post(() -> {
 
@@ -227,6 +218,15 @@ public class img_Fragment extends Fragment {
     }
 
 }
+
+
+
+
+
+
+
+
+
 
 
 

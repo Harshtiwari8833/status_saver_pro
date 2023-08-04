@@ -107,7 +107,7 @@ public class saved_Fragment extends Fragment {
 //                        progressBar.setVisibility(View.GONE);
                         no_files_found.setVisibility(View.VISIBLE);
                         if(isAdded()){
-                            Toast.makeText(getContext(), "Dir doest not exists!", Toast.LENGTH_SHORT).show();
+                           
                         }
                     });
 

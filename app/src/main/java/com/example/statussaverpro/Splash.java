@@ -138,11 +138,12 @@ public class Splash extends AppCompatActivity {
 
     private void next() {
 
+
+
         handler.postDelayed(() -> {
             startActivity(new Intent(Splash.this, MainActivity.class));
             finish();
         }, 1000);
-
     }
 
     private boolean arePermissionDenied() {

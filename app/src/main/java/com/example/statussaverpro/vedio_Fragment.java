@@ -81,44 +81,51 @@ SwipeRefreshLayout refresh;
     private void executeNew() {
         Executors.newSingleThreadExecutor().execute(() -> {
             Handler mainHandler = new Handler(Looper.getMainLooper());
+            try {  List<UriPermission> list = requireActivity().getContentResolver().getPersistedUriPermissions();
 
-            List<UriPermission> list = requireActivity().getContentResolver().getPersistedUriPermissions();
+                DocumentFile file = DocumentFile.fromTreeUri(requireActivity(), list.get(0).getUri());
 
-            DocumentFile file = DocumentFile.fromTreeUri(requireActivity(), list.get(0).getUri());
-
-            videoList.clear();
-
-            if (file == null) {
-                mainHandler.post(() -> {
+                videoList.clear();
+                if (file == null) {
+                    mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-                    messageTextView.setVisibility(View.VISIBLE);
+                        messageTextView.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
-                    Toast.makeText(getContext(), "No file found!", Toast.LENGTH_SHORT).show();
-                    refresh.setRefreshing(false);
-                });
-                return;
-            }
-
-            DocumentFile[] statusFiles = file.listFiles();
-
-            if (statusFiles.length <= 0) {
-                mainHandler.post(() -> {
-//                    progressBar.setVisibility(View.GONE);
-                    messageTextView.setVisibility(View.VISIBLE);
-//                    messageTextView.setText(R.string.no_files_found);
-                    Toast.makeText(getActivity(), "No file found!", Toast.LENGTH_SHORT).show();
-                    refresh.setRefreshing(false);
-                });
-                return;
-            }
-
-            for (DocumentFile documentFile : statusFiles) {
-                Status status = new Status(documentFile);
-
-                if (status.isVideo()) {
-                    videoList.add(status);
+                        Toast.makeText(getContext(), "No file found!", Toast.LENGTH_SHORT).show();
+                        refresh.setRefreshing(false);
+                    });
+                    return;
                 }
+                DocumentFile[] statusFiles = file.listFiles();
+                if (statusFiles.length <= 0) {
+                    mainHandler.post(() -> {
+//                    progressBar.setVisibility(View.GONE);
+                        messageTextView.setVisibility(View.VISIBLE);
+//                    messageTextView.setText(R.string.no_files_found);
+                        Toast.makeText(getActivity(), "No file found!", Toast.LENGTH_SHORT).show();
+                        refresh.setRefreshing(false);
+                    });
+                    return;
+                }
+                for (DocumentFile documentFile : statusFiles) {
+                    Status status = new Status(documentFile);
+
+                    if (status.isVideo()) {
+                        videoList.add(status);
+                    }
+                }
+            }catch (Exception e){
+                e.printStackTrace();
             }
+
+
+
+
+
+
+
+
+
 
             mainHandler.post(() -> {
 
