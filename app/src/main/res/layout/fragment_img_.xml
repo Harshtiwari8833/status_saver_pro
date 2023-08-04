@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,15 +9,27 @@
     style="@style/SCREEN"
     tools:context=".img_Fragment">
 
+    <TextView
+        android:id="@+id/no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Images"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+
         android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id= "@+id/refresh"
-        style="@style/SCREEN"
-        android:orientation="vertical">
-
-
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.core.widget.NestedScrollView
@@ -32,23 +44,24 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:text="Images"
-                    android:textStyle="bold"
                     style="@style/TEXT"
-                    android:textSize="39dp"/>
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Images"
+                    android:textSize="39dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TEXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="22dp"
-                    android:layout_marginLeft="15dp"
                     android:text="Save and Share: WhatsApp Status Images"
-                    style="@style/TEXT"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler"
@@ -70,8 +83,7 @@
         </androidx.core.widget.NestedScrollView>
 
 
-
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

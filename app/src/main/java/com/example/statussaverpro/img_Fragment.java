@@ -24,6 +24,7 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.statussaverpro.Models.Status;
@@ -47,7 +48,7 @@ public class img_Fragment extends Fragment {
 
   RecyclerView recycler;
    imageadapter adapter;
-
+  TextView  no_files_found;
     boolean nightMode;
 
     private final List<Status> imagesList = new ArrayList<>();
@@ -59,6 +60,7 @@ public class img_Fragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_img_, container, false);
         refresh = v.findViewById(R.id.refresh);
         recycler = v.findViewById(R.id.recycler);
+        no_files_found = v.findViewById(R.id.no);
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
@@ -92,7 +94,7 @@ public class img_Fragment extends Fragment {
             executeOld();
 
         } else {
-//            messageTextView.setVisibility(View.VISIBLE);
+            no_files_found.setVisibility(View.VISIBLE);
 //            messageTextView.setText(R.string.cant_find_whatsapp_dir);
 //            Toast.makeText(getActivity(), getString(R.string.cant_find_whatsapp_dir), Toast.LENGTH_SHORT).show();
 //            swipeRefreshLayout.setRefreshing(false);
@@ -130,10 +132,10 @@ public class img_Fragment extends Fragment {
                 mainHandler.post(() -> {
 
                     if (imagesList.size() <= 0) {
-//                        messageTextView.setVisibility(View.VISIBLE);
+                        no_files_found.setVisibility(View.VISIBLE);
 //                        messageTextView.setText(R.string.no_files_found);
                     } else {
-//                        messageTextView.setVisibility(View.GONE);
+                        no_files_found.setVisibility(View.GONE);
 //                        messageTextView.setText("");
                     }
 
@@ -147,7 +149,7 @@ public class img_Fragment extends Fragment {
 
                 mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    no_files_found.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
 //                    Toast.makeText(getActivity(), getString(R.string.no_files_found), Toast.LENGTH_SHORT).show();
                 });
@@ -172,7 +174,7 @@ public class img_Fragment extends Fragment {
             if (file == null) {
                 mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    no_files_found.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
 //                    Toast.makeText(getActivity(), getString(R.string.no_files_found), Toast.LENGTH_SHORT).show();
                     refresh.setRefreshing(false);
@@ -185,9 +187,9 @@ public class img_Fragment extends Fragment {
             if (statusFiles.length <= 0) {
                 mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    no_files_found.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
-//                    Toast.makeText(getActivity(), getString(R.string.no_files_found), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "no file found", Toast.LENGTH_SHORT).show();
                     refresh.setRefreshing(false);
                 });
                 return;
@@ -208,10 +210,10 @@ public class img_Fragment extends Fragment {
             mainHandler.post(() -> {
 
                 if (imagesList.size() <= 0) {
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    no_files_found.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
                 } else {
-//                    messageTextView.setVisibility(View.GONE);
+                    no_files_found.setVisibility(View.GONE);
 //                    messageTextView.setText("");
                 }
 

@@ -16,6 +16,7 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.statussaverpro.Models.Status;
@@ -31,6 +32,7 @@ import java.util.concurrent.Executors;
 public class vedio_Fragment extends Fragment {
 RecyclerView recycler;
 videoAdapter adapter;
+TextView messageTextView;
 SwipeRefreshLayout refresh;
     private final List<Status> videoList = new ArrayList<>();
     @Override
@@ -40,6 +42,7 @@ SwipeRefreshLayout refresh;
 
          recycler = view.findViewById(R.id.recycler);
         refresh = view.findViewById(R.id.refresh);
+        messageTextView = view.findViewById(R.id.no);
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
@@ -68,7 +71,7 @@ SwipeRefreshLayout refresh;
             executeOld();
 
         } else {
-//            messageTextView.setVisibility(View.VISIBLE);
+            messageTextView.setVisibility(View.VISIBLE);
 //            messageTextView.setText(R.string.cant_find_whatsapp_dir);
             Toast.makeText(getContext(), "Cant find whatsapp directory!", Toast.LENGTH_SHORT).show();
             refresh.setRefreshing(false);
@@ -88,7 +91,7 @@ SwipeRefreshLayout refresh;
             if (file == null) {
                 mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    messageTextView.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
                     Toast.makeText(getContext(), "No file found!", Toast.LENGTH_SHORT).show();
                     refresh.setRefreshing(false);
@@ -101,7 +104,7 @@ SwipeRefreshLayout refresh;
             if (statusFiles.length <= 0) {
                 mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    messageTextView.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
                     Toast.makeText(getActivity(), "No file found!", Toast.LENGTH_SHORT).show();
                     refresh.setRefreshing(false);
@@ -120,10 +123,10 @@ SwipeRefreshLayout refresh;
             mainHandler.post(() -> {
 
                 if (videoList.size() <= 0) {
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    messageTextView.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
                 } else {
-//                    messageTextView.setVisibility(View.GONE);
+                    messageTextView.setVisibility(View.GONE);
 //                    messageTextView.setText("");
                 }
 
@@ -160,10 +163,10 @@ SwipeRefreshLayout refresh;
                 mainHandler.post(() -> {
 
                     if (videoList.size() <= 0) {
-//                        messageTextView.setVisibility(View.VISIBLE);
+                        messageTextView.setVisibility(View.VISIBLE);
 //                        messageTextView.setText(R.string.no_files_found);
                     } else {
-//                        messageTextView.setVisibility(View.GONE);
+                        messageTextView.setVisibility(View.GONE);
 //                        messageTextView.setText("");
                     }
 
@@ -177,7 +180,7 @@ SwipeRefreshLayout refresh;
 
                 mainHandler.post(() -> {
 //                    progressBar.setVisibility(View.GONE);
-//                    messageTextView.setVisibility(View.VISIBLE);
+                    messageTextView.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
                     Toast.makeText(getContext(), "No file found!", Toast.LENGTH_SHORT).show();
                 });
