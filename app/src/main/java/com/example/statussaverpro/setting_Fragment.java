@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.Toast;
 
 
 public class setting_Fragment extends Fragment {
@@ -75,21 +76,26 @@ public class setting_Fragment extends Fragment {
         switcher_1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+try {
+    if(nightMode){
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        editor = sharedPreferences.edit();
+        editor.putBoolean("night",false);
 
-                if(nightMode){
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    editor = sharedPreferences.edit();
-                    editor.putBoolean("night",false);
 
+    }else{
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        editor = sharedPreferences.edit();
+        editor.putBoolean("night", true);
 
-                }else{
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    editor = sharedPreferences.edit();
-                    editor.putBoolean("night", true);
+    }
 
-                }
+    editor.apply();
 
-                editor.apply();
+}catch (Exception e){
+    e.printStackTrace();
+    Toast.makeText(getContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
+}
 
             }
         });
