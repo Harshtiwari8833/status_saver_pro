@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="MaverickBits built the WhatsApp Status Saver app as a Free app. This service is provided by MaverickBits at no cost and is intended for its use."
+                android:text="MaverickBits built the Status Saver app as a Free app. This service is provided by MaverickBits at no cost and is intended for its use."
                 android:padding="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="7dp"/>
@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Our Privacy Policy explains how we collect, use, and disclose information about users of the WhatsApp Status Saver Android Application . By using the App, you agree to the terms of this Privacy Policy."
+                android:text="Our Privacy Policy explains how we collect, use, and disclose information about users of the Status Saver Android Application . By using the App, you agree to the terms of this Privacy Policy."
                 android:padding="10dp"
                 android:layout_marginLeft="7dp"/>
 
@@ -153,14 +153,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Please note that this Privacy Policy only applies to the WhatsApp Status Saver Android Application and not to any other third-party websites or applications that you may access through links within the App. We encourage you to review the privacy policies of those third-party services before providing them with any personal information."
+                android:text="Please note that this Privacy Policy only applies to the Status Saver Android Application and not to any other third-party websites or applications that you may access through links within the App. We encourage you to review the privacy policies of those third-party services before providing them with any personal information."
                 android:padding="10dp"
                 android:layout_marginLeft="7dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="By downloading, installing, and using the WhatsApp Status Saver Android Application, you acknowledge that you have read and understood this Privacy Policy and agree to be bound by its terms and conditions."
+                android:text="By downloading, installing, and using the Status Saver Android Application, you acknowledge that you have read and understood this Privacy Policy and agree to be bound by its terms and conditions."
                 android:padding="10dp"
                 android:layout_marginBottom="50dp"
                 android:layout_marginLeft="7dp"/>

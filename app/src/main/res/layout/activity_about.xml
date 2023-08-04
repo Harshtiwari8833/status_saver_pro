@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Welcome to WhatsApp Status Saver, the Android Application that allows you to save, share and access your favorite WhatsApp status updates with ease."
+                android:text="Welcome to Status Saver, the Android Application that allows you to save, share and access your favorite WhatsApp status updates with ease."
                 android:padding="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"/>
@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="At WhatsApp Status Saver, we understand the joy of sharing and cherishing the moments captured in WhatsApp statuses. However, we also recognize that these statuses disappear after 24 hours, making it challenging to relive those special memories. That's why we created WhatsApp Status Saver to offer you a convenient way to save and revisit those delightful moments and share with your friends and family whenever you want."
+                android:text="At Status Saver, we understand the joy of sharing and cherishing the moments captured in WhatsApp statuses. However, we also recognize that these statuses disappear after 24 hours, making it challenging to relive those special memories. That's why we created WhatsApp Status Saver to offer you a convenient way to save and revisit those delightful moments and share with your friends and family whenever you want."
                 android:padding="10dp"
                 android:layout_marginLeft="10dp"/>
 
@@ -72,21 +72,21 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="1. Easy Status Saving: WhatsApp Status Saver allows you to save both images and videos from WhatsApp statuses in just a few taps. You can view and share them with your friends and family or keep them for your personal collection."
+                android:text="1. Easy Status Saving: Status Saver allows you to save both images and videos from WhatsApp statuses in just a few taps. You can view and share them with your friends and family or keep them for your personal collection."
                 android:padding="10dp"
                 android:layout_marginLeft="17dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="2. Ad-Free Experience: We want you to focus on what matters most - your favorite WhatsApp statuses. That's why WhatsApp Status Saver is completely ad-free, ensuring a seamless and uninterrupted experience."
+                android:text="2. Ad-Free Experience: We want you to focus on what matters most - your favorite WhatsApp statuses. That's why Status Saver is completely ad-free, ensuring a seamless and uninterrupted experience."
                 android:padding="10dp"
                 android:layout_marginLeft="17dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="3. Privacy and Security: We take your privacy seriously. WhatsApp Status Saver operates locally on your Android device, ensuring that your personal information and WhatsApp data remain safe and secure."
+                android:text="3. Privacy and Security: We take your privacy seriously. Status Saver operates locally on your Android device, ensuring that your personal information and WhatsApp data remain safe and secure."
                 android:padding="10dp"
                 android:layout_marginLeft="17dp"/>
 
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="If you love using WhatsApp Status Saver, consider sharing it with your friends and family. The more people who use our App, the more enjoyable the WhatsApp experience becomes for everyone."
+                android:text="If you love using Status Saver, consider sharing it with your friends and family. The more people who use our App, the more enjoyable the WhatsApp experience becomes for everyone."
                 android:padding="10dp"
                 style="@style/TEXT"
                 android:layout_marginLeft="17dp"/>
@@ -117,7 +117,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Thank you for choosing WhatsApp Status Saver to be a part of your WhatsApp journey. We hope our application brings you joy as you save and cherish the moments that matter most."
+                android:text="Thank you for choosing Status Saver to be a part of your WhatsApp journey. We hope our application brings you joy as you save and cherish the moments that matter most."
                 android:padding="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="20dp"/>
@@ -151,7 +151,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="We value your feedback and suggestions, and we are committed to continuously improving the WhatsApp Status Saver experience. If you have any questions, concerns, or ideas for enhancing the App, please feel free to reach out to us."
+                    android:text="We value your feedback and suggestions, and we are committed to continuously improving the Status Saver experience. If you have any questions, concerns, or ideas for enhancing the App, please feel free to reach out to us."
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:padding="10dp"/>
