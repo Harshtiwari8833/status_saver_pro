@@ -215,7 +215,7 @@ public class OnboardingActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (!arePermissionDenied()) {
-//            next();
+            next();
         }
     }
 
@@ -256,7 +256,7 @@ public class OnboardingActivity extends AppCompatActivity {
                 recreate();
             } else {
 
-//                   next();
+                   next();
             }
         }
     }
@@ -268,6 +268,7 @@ public class OnboardingActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref1.edit();
         editor.putBoolean("flag",true);
         editor.apply();
+        Toast.makeText(context, "harsh", Toast.LENGTH_SHORT).show();
 
         handler.postDelayed(() -> {
             startActivity(new Intent(OnboardingActivity.this,MainActivity.class));

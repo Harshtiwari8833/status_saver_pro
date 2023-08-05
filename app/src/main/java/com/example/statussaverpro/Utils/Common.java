@@ -39,7 +39,7 @@ import java.util.Random;
 public class Common {
     public static final int GRID_COUNT = 2;
 
-    private static final String CHANNEL_NAME = "HARSH";
+    private static final String CHANNEL_NAME = "GAUTHAM";
 
     public static final File STATUS_DIRECTORY = new File(Environment.getExternalStorageDirectory() +
             File.separator + "WhatsApp/Media/.Statuses");
@@ -105,8 +105,8 @@ public class Common {
                 destFile.setLastModified(System.currentTimeMillis());
                 new SingleMediaScanner(context, file);
 
-//                Uri data = FileProvider.getUriForFile(context, "a.gautham.statusdownloader.provider",
-//                        new File(destFile.getAbsolutePath()));
+                Uri data = FileProvider.getUriForFile(context, "a.gautham.statusdownloader.provider",
+                        new File(destFile.getAbsolutePath()));
 
 //                showNotification(context, container, status, fileName, data);
             }
@@ -170,17 +170,17 @@ public class Common {
 //
 //    }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private static void makeNotificationChannel(Context context) {
-
-        NotificationChannel channel = new NotificationChannel(Common.CHANNEL_NAME, "Saved", NotificationManager.IMPORTANCE_DEFAULT);
-        channel.setShowBadge(true);
-
-        NotificationManager notificationManager =
-                (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
-
-        assert notificationManager != null;
-        notificationManager.createNotificationChannel(channel);
-    }
+//    @RequiresApi(api = Build.VERSION_CODES.O)
+//    private static void makeNotificationChannel(Context context) {
+//
+//        NotificationChannel channel = new NotificationChannel(Common.CHANNEL_NAME, "Saved", NotificationManager.IMPORTANCE_DEFAULT);
+//        channel.setShowBadge(true);
+//
+//        NotificationManager notificationManager =
+//                (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
+//
+//        assert notificationManager != null;
+//        notificationManager.createNotificationChannel(channel);
+//    }
 
 }

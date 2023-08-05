@@ -48,7 +48,7 @@ public class videoAdapter extends  RecyclerView.Adapter<videoAdapter.ViewHolder>
         holder.download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.copyFile(status, context);
+                holder.download.setOnClickListener(v -> Common.copyFile(status, context));
                 Toast.makeText(context, "Video saved :)", Toast.LENGTH_SHORT).show();
             }
         });
