@@ -48,7 +48,13 @@ ImageView image;
         status = intent.getParcelableExtra("statusObject");
 
 
-        Glide.with(this).load(status.getDocumentFile().getUri()).into(image);
+        if (status.isApi30()) {
+            Glide.with(this).load(status.getDocumentFile().getUri()).into(image);
+        } else {
+            Glide.with(this).load(status.getFile()).into(image);
+        }
+
+//        Glide.with(this).load(status.getDocumentFile().getUri()).into(image);
 
     }
 }

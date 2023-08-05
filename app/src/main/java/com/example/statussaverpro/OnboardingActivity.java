@@ -215,7 +215,7 @@ public class OnboardingActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (!arePermissionDenied()) {
-            next();
+//            next();
         }
     }
 
@@ -256,9 +256,7 @@ public class OnboardingActivity extends AppCompatActivity {
                 recreate();
             } else {
 
-
-                   next();
-
+//                   next();
             }
         }
     }
