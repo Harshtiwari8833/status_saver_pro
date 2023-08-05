@@ -13,12 +13,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginTop="@dimen/dim_50"
+        android:layout_marginLeft="@dimen/dim_15"
         android:text="About Us"
         android:textStyle="bold"
         style="@style/TEXT"
-        android:textSize="39dp"/>
+        android:textSize="@dimen/dim_39"/>
 
 
     <androidx.core.widget.NestedScrollView
@@ -35,67 +35,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Welcome to Status Saver, the Android Application that allows you to save, share and access your favorite WhatsApp status updates with ease."
-                android:padding="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginTop="@dimen/dim_20"
+                android:layout_marginLeft="@dimen/dim_10"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="At Status Saver, we understand the joy of sharing and cherishing the moments captured in WhatsApp statuses. However, we also recognize that these statuses disappear after 24 hours, making it challenging to relive those special memories. That's why we created WhatsApp Status Saver to offer you a convenient way to save and revisit those delightful moments and share with your friends and family whenever you want."
-                android:padding="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_10"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Our Mission:"
                 android:textStyle="bold"
-                android:padding="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_10"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Our mission is simple: to enhance your WhatsApp experience by providing a user-friendly and secure application that allows you to store your cherished status updates. We strive to make your WhatsApp journey more memorable and enjoyable by giving you the power to save and access your favorite status updates effortlessly."
-                android:padding="10dp"
-                android:layout_marginLeft="17dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_17"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Key Features:"
                 android:textStyle="bold"
-                android:padding="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_10"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="1. Easy Status Saving: Status Saver allows you to save both images and videos from WhatsApp statuses in just a few taps. You can view and share them with your friends and family or keep them for your personal collection."
-                android:padding="10dp"
-                android:layout_marginLeft="17dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_17"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="2. Ad-Free Experience: We want you to focus on what matters most - your favorite WhatsApp statuses. That's why Status Saver is completely ad-free, ensuring a seamless and uninterrupted experience."
-                android:padding="10dp"
-                android:layout_marginLeft="17dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_17"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="3. Privacy and Security: We take your privacy seriously. Status Saver operates locally on your Android device, ensuring that your personal information and WhatsApp data remain safe and secure."
-                android:padding="10dp"
-                android:layout_marginLeft="17dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_17"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="4. Intuitive Interface: Our App features a user-friendly interface, making it easy for anyone to save and access WhatsApp statuses without any hassle."
-                android:padding="10dp"
-                android:layout_marginLeft="17dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_17"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -103,31 +103,31 @@
                 android:text="Spread the Word:"
                 android:textStyle="bold"
                 style="@style/TEXT"
-                android:padding="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_10"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="If you love using Status Saver, consider sharing it with your friends and family. The more people who use our App, the more enjoyable the WhatsApp experience becomes for everyone."
-                android:padding="10dp"
+                android:padding="@dimen/dim_10"
                 style="@style/TEXT"
-                android:layout_marginLeft="17dp"/>
+                android:layout_marginLeft="@dimen/dim_17"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Thank you for choosing Status Saver to be a part of your WhatsApp journey. We hope our application brings you joy as you save and cherish the moments that matter most."
-                android:padding="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="20dp"/>
+                android:padding="@dimen/dim_10"
+                android:layout_marginLeft="@dimen/dim_10"
+                android:layout_marginBottom="@dimen/dim_20"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingVertical="10dp"
-            android:layout_marginBottom="40dp"
-            android:layout_marginHorizontal="15dp"
+            android:paddingVertical="@dimen/dim_10"
+            android:layout_marginBottom="@dimen/dim_40"
+            android:layout_marginHorizontal="@dimen/dim_15"
             android:id="@+id/card"
             style="@style/CARD"
             android:background="@drawable/profilebg"
@@ -144,17 +144,17 @@
                     android:text="Connect With Us:"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/dim_20"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="15dp"/>
+                    android:layout_marginLeft="@dimen/dim_15"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="We value your feedback and suggestions, and we are committed to continuously improving the Status Saver experience. If you have any questions, concerns, or ideas for enhancing the App, please feel free to reach out to us."
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/dim_10"
                     android:textColor="@color/black"
-                    android:padding="10dp"/>
+                    android:padding="@dimen/dim_10"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -164,9 +164,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Email : "
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="@dimen/dim_15"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/dim_20"
                         android:id="@+id/mail"/>
 
                     <TextView
@@ -174,8 +174,8 @@
                         android:layout_height="match_parent"
                         android:text="maverickbits.official@gmail.com"
                         android:textColor="#1E88E5"
-                        android:layout_marginTop="2dp"
-                        android:textSize="17dp"
+                        android:layout_marginTop="@dimen/dim_2"
+                        android:textSize="@dimen/dim_17"
                         android:textStyle="italic"
                         android:id="@+id/email"
                         android:layout_toRightOf="@+id/mail"/>

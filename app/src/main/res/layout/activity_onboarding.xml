@@ -9,11 +9,11 @@
         android:id="@+id/buttonOnboardingAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="@dimen/dim_20"
         android:textColor="@color/white"
-        android:layout_marginBottom="15dp"
-        app:cornerRadius="20dp"
-        android:text=""
+        android:layout_marginBottom="@dimen/dim_15"
+        app:cornerRadius="@dimen/dim_20"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -26,14 +26,15 @@
         android:id="@+id/layoutOnboardingIndicators"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="@dimen/dim_20"
+        android:layout_marginEnd="@dimen/dim_20"
         android:orientation="horizontal"
-        android:padding="15dp"
+        android:padding="@dimen/dim_15"
 
 
         app:layout_constraintBottom_toBottomOf="@+id/buttonOnboardingAction"
         app:layout_constraintEnd_toStartOf="@id/buttonOnboardingAction"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/buttonOnboardingAction" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
