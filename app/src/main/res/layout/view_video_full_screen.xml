@@ -12,19 +12,19 @@
     <VideoView
         android:id="@+id/video_full"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="@dimen/dim_250"
+        android:layout_marginStart="@dimen/dim_8"
+        android:layout_marginEnd="@dimen/dim_8"
+        android:layout_marginTop="@dimen/dim_8"
         android:layout_gravity="center"/>
 
     <FrameLayout
         android:id="@+id/videoViewWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="@dimen/dim_8"
+        android:layout_marginEnd="@dimen/dim_8"
+        android:layout_marginBottom="@dimen/dim_8"
         android:layout_gravity="center"/>
 
 </LinearLayout>

@@ -7,13 +7,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginVertical="5dp">
+        android:layout_marginHorizontal="@dimen/dim_5"
+        android:layout_marginVertical="@dimen/dim_5">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="290dp"
-            app:cardCornerRadius="18dp"
+            android:layout_height="@dimen/dim_290"
+            app:cardCornerRadius="@dimen/dim_18"
             android:background="#BABABA"
             android:id="@+id/image_cardview">
 
@@ -31,9 +31,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 <ImageView
-    android:layout_width="36dp"
-    android:layout_height="36dp"
-    android:layout_margin="10dp"
+    android:layout_width="@dimen/dim_36"
+    android:layout_height="@dimen/dim_36"
+    android:layout_margin="@dimen/dim_10"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     android:id="@+id/download"
@@ -41,20 +41,20 @@
 
                 <ImageView
                     android:id="@+id/share"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-          android:layout_marginRight="20dp"
-                    android:layout_margin="10dp"
+                    android:layout_width="@dimen/dim_36"
+                    android:layout_height="@dimen/dim_36"
+          android:layout_marginRight="@dimen/dim_20"
+                    android:layout_margin="@dimen/dim_10"
                     android:src="@drawable/sharing"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/download" />
 
                 <ImageView
                     android:id="@+id/play"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="@dimen/dim_36"
+                    android:layout_height="@dimen/dim_36"
 
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/dim_10"
                     android:src="@drawable/play"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
