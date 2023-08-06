@@ -187,7 +187,9 @@ public class img_Fragment extends Fragment {
 //                    progressBar.setVisibility(View.GONE);
                         no_files_found.setVisibility(View.VISIBLE);
 //                    messageTextView.setText(R.string.no_files_found);
-                        Toast.makeText(getActivity(), "no file found", Toast.LENGTH_SHORT).show();
+                        if(isAdded()){
+                            Toast.makeText(getActivity(), "no file found", Toast.LENGTH_SHORT).show();
+                        }
                         refresh.setRefreshing(false);
                     });
                     return;
