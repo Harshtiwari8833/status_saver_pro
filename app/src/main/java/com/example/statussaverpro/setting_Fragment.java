@@ -48,9 +48,13 @@ public class setting_Fragment extends Fragment {
         switcher_1 = view.findViewById(R.id.switcher_1);
 
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
-            card_1.setVisibility(View.INVISIBLE);
-        }
+//        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.S || Build.VERSION.SDK_INT == Build.VERSION_CODES.S_V2 ||Build.VERSION.SDK_INT == Build.VERSION_CODES.TIRAMISU ){
+//            card_1.setVisibility(View.VISIBLE);
+//        }else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.R) {
+//            card_1.setVisibility(View.INVISIBLE);
+//        } else {
+//            card_1.setVisibility(View.INVISIBLE);
+//        }
 
         /* settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
          settingViewModel.getNightModeLiveData().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
