@@ -21,30 +21,24 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.storage.StorageManager;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import java.util.Objects;
 
 public class Splash extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        //      this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_splash);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        try{
-            sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
-            boolean nightMode = sharedPreferences.getBoolean("night", false);
-            if(nightMode==true){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            }else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-        }catch (Exception e)
-        {
-            e.printStackTrace();
 
-        }
 
         SharedPreferences pref1 = getSharedPreferences("Onboardin", MODE_PRIVATE);
         boolean check = pref1.getBoolean("flag", false);
@@ -58,6 +52,7 @@ public class Splash extends AppCompatActivity {
 
              }
              else{
+                 Toast.makeText(Splash.this, "hello", Toast.LENGTH_SHORT).show();
                  Intent  intent = new Intent(Splash.this, OnboardingActivity.class);
                  finish();
                  startActivity(intent);

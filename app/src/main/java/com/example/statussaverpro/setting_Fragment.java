@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -24,7 +25,7 @@ import android.widget.Toast;
 
 public class setting_Fragment extends Fragment {
 
-    LinearLayout card_3,card_4,card_5,card_7;
+    LinearLayout card_3,card_4,card_5,card_7,card_1;
     Switch switcher_1;
     boolean nightMode;
     SharedPreferences sharedPreferences;
@@ -36,12 +37,20 @@ public class setting_Fragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_setting_, container, false);
 
 
+        card_1 = view.findViewById(R.id.card_1);
         card_3 = view.findViewById(R.id.card_3);
         card_4 = view.findViewById(R.id.card_4);
         card_5 = view.findViewById(R.id.card_5);
         card_7 = view.findViewById(R.id.card_7);
 
+
+
         switcher_1 = view.findViewById(R.id.switcher_1);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+            card_1.setVisibility(View.INVISIBLE);
+        }
 
         /* settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
          settingViewModel.getNightModeLiveData().observe(getViewLifecycleOwner(), new Observer<Boolean>() {

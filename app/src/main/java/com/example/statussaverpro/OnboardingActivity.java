@@ -24,6 +24,8 @@ import android.os.storage.StorageManager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -76,6 +78,10 @@ public class OnboardingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        //      this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_splash);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
         buttonOnboardingAction = findViewById(R.id.buttonOnboardingAction);
@@ -146,17 +152,17 @@ public class OnboardingActivity extends AppCompatActivity {
         OnboardingItem itemPayOnline= new OnboardingItem();
 //        itemPayOnline.setTitle("Medicare In Your Pocket");
 //        itemPayOnline.setDescription("Get Prescription From Well-Known Doctors Across The World");
-        itemPayOnline.setImage(R.drawable.three);
+        itemPayOnline.setImage(R.drawable.oneimg);
 
         OnboardingItem itemOnTheWay = new OnboardingItem();
 //        itemOnTheWay.setTitle("Unlock Your Beauty Secrets");
 //        itemOnTheWay.setDescription("Enhance Your Beauty, Effortlessly. Your Aesthetic Journey Starts Here");
-        itemOnTheWay.setImage(R.drawable.one);
+        itemOnTheWay.setImage(R.drawable.twoimg);
 
         OnboardingItem itemEatTogether = new OnboardingItem();
 //        itemEatTogether.setTitle("Embrace Beauty, Inside and Out");
 //        itemEatTogether.setDescription("Cosmetic Care, Reinvented. Unlock the Best Version of You with Our App.");
-        itemEatTogether.setImage(R.drawable.two);
+        itemEatTogether.setImage(R.drawable.threeimg);
 
         onboardingItems.add(itemPayOnline);
         onboardingItems.add(itemOnTheWay);

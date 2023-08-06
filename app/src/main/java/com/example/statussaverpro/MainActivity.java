@@ -30,6 +30,8 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -49,7 +51,7 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG="MainActivity";
-
+    SharedPreferences sharedPreferences;
     BottomNavigationView btm_nav;
     LinearLayout linear;
     private long back_pressed;
@@ -93,11 +95,24 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
             setContentView(R.layout.activity_main);
 
+        try{
+            sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
+            boolean nightMode = sharedPreferences.getBoolean("night", false);
+            if(nightMode==true){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
 
+        }
         btm_nav = findViewById(R.id.btm_nav);
 
         linear = findViewById(R.id.linear);
@@ -182,12 +197,12 @@ public class MainActivity extends AppCompatActivity {
             requestPermissions(PERMISSIONS, REQUEST_PERMISSIONS);
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
-                ActivityCompat.checkSelfPermission(getApplicationContext(),
-                        Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(NOTIFICATION_PERMISSION,
-                    NOTIFICATION_REQUEST_PERMISSIONS);
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+//                ActivityCompat.checkSelfPermission(getApplicationContext(),
+//                        Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+//            requestPermissions(NOTIFICATION_PERMISSION,
+//                    NOTIFICATION_REQUEST_PERMISSIONS);
+//        }
 
         if (Common.APP_DIR == null || Common.APP_DIR.isEmpty()) {
             Common.APP_DIR = getExternalFilesDir("StatusDownloader").getPath();
