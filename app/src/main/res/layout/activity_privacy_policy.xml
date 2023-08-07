@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    style="@style/SCREEN"
+    android:background="#F7F7F7"
     tools:context=".Privacy_policy">
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginLeft="@dimen/dim_15"
         android:text="Privacy Policy"
         android:textStyle="bold"
-        style="@style/TEXT"
+        android:textColor="@color/black"
         android:textSize="@dimen/dim_39"/>
 
     <androidx.core.widget.NestedScrollView

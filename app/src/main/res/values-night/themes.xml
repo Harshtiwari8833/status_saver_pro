@@ -1,36 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.StatusSaverPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.StatusSaverPro" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">#0B0A0A</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/material_dynamic_secondary10</item>
-        <item name="colorSecondaryVariant">#1B2B39</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">#0A1A29</item>
+        <item name="android:statusBarColor">#E4E4E4</item>
         <!-- Customize your theme here. -->
     </style>
 
     <!-- Dark Mode on -->
     <!-- Screen background if dark mode is ON -->
 
-    <style name="SCREEN">
-        <item name="android:background">#0A1A29</item>
-    </style>
 
-    <!-- Text colour if dark mode is ON -->
-    <style name="TEXT">
-        <item name="android:textColor">@color/white</item>
-    </style>
-
-    <!-- CardView if dark mode is ON -->
-    <style name="CARD">
-        <item name="android:background">#F8F6F6</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
 
 
 

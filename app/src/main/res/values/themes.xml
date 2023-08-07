@@ -17,20 +17,7 @@
     <!-- Light Mode on -->
     <!-- Screen background if light mode is ON -->
 
-    <style name="SCREEN">
-        <item name="android:background">#F7F7F7</item>
-    </style>
 
-    <!-- Text colour if light mode is ON -->
-    <style name="TEXT">
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <!-- CardView if light mode is ON -->
-    <style name="CARD">
-        <item name="android:background">#E4E3E3</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
 
 
 </resources>

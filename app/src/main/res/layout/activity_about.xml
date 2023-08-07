@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    style="@style/SCREEN"
+android:background="#F7F7F7"
     tools:context=".about">
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginLeft="@dimen/dim_15"
         android:text="About Us"
         android:textStyle="bold"
-        style="@style/TEXT"
+android:textColor="@color/black"
         android:textSize="@dimen/dim_39"/>
 
 
@@ -102,7 +102,7 @@
                 android:layout_height="match_parent"
                 android:text="Spread the Word:"
                 android:textStyle="bold"
-                style="@style/TEXT"
+
                 android:padding="@dimen/dim_10"
                 android:layout_marginLeft="@dimen/dim_10"/>
 
@@ -111,7 +111,7 @@
                 android:layout_height="match_parent"
                 android:text="If you love using Status Saver, consider sharing it with your friends and family. The more people who use our App, the more enjoyable the WhatsApp experience becomes for everyone."
                 android:padding="@dimen/dim_10"
-                style="@style/TEXT"
+
                 android:layout_marginLeft="@dimen/dim_17"/>
 
             <TextView
@@ -129,7 +129,7 @@
             android:layout_marginBottom="@dimen/dim_40"
             android:layout_marginHorizontal="@dimen/dim_15"
             android:id="@+id/card"
-            style="@style/CARD"
+
             android:background="@drawable/profilebg"
             android:orientation="vertical">
 

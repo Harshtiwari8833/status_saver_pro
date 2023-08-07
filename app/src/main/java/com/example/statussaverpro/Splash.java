@@ -34,7 +34,7 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-              this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
@@ -54,7 +54,7 @@ public class Splash extends AppCompatActivity {
 
              }
              else{
-                 Toast.makeText(Splash.this, "hello", Toast.LENGTH_SHORT).show();
+
                  Intent  intent = new Intent(Splash.this, OnboardingActivity.class);
                  finish();
                  startActivity(intent);

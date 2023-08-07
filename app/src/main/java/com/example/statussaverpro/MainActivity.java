@@ -99,19 +99,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-        try{
-            sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
-            boolean nightMode = sharedPreferences.getBoolean("night", false);
-            if(nightMode==true){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            }else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-        }catch (Exception e)
-        {
-            e.printStackTrace();
-
-        }
+//        try{
+//            sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
+//            boolean nightMode = sharedPreferences.getBoolean("night", false);
+//            if(nightMode==true){
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//            }else {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//            }
+//        }catch (Exception e)
+//        {
+//            e.printStackTrace();
+//
+//        }
         btm_nav = findViewById(R.id.btm_nav);
 
         linear = findViewById(R.id.linear);

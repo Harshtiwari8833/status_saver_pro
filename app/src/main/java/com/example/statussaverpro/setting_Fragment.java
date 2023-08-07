@@ -37,7 +37,7 @@ public class setting_Fragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_setting_, container, false);
 
 
-        card_1 = view.findViewById(R.id.card_1);
+
         card_3 = view.findViewById(R.id.card_3);
         card_4 = view.findViewById(R.id.card_4);
         card_5 = view.findViewById(R.id.card_5);
@@ -45,7 +45,7 @@ public class setting_Fragment extends Fragment {
 
 
 
-        switcher_1 = view.findViewById(R.id.switcher_1);
+//        switcher_1 = view.findViewById(R.id.switcher_1);
 
 
 //        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.S || Build.VERSION.SDK_INT == Build.VERSION_CODES.S_V2 ||Build.VERSION.SDK_INT == Build.VERSION_CODES.TIRAMISU ){
@@ -75,43 +75,43 @@ public class setting_Fragment extends Fragment {
 
 
 
-        sharedPreferences = getActivity().getSharedPreferences("MODE", Context.MODE_PRIVATE);
-        nightMode = sharedPreferences.getBoolean("night", false);
+//        sharedPreferences = getActivity().getSharedPreferences("MODE", Context.MODE_PRIVATE);
+//        nightMode = sharedPreferences.getBoolean("night", false);
 
-       if(nightMode){
-           switcher_1.setChecked(true);
-           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else {
-           switcher_1.setChecked(false);
-           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-       }
+//       if(nightMode){
+//           switcher_1.setChecked(true);
+//           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//        }else {
+//           switcher_1.setChecked(false);
+//           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//       }
 
-        switcher_1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-try {
-    if(nightMode){
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        editor = sharedPreferences.edit();
-        editor.putBoolean("night",false);
+//        switcher_1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//try {
+//    if(nightMode){
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//        editor = sharedPreferences.edit();
+//        editor.putBoolean("night",false);
+//
+//
+//    }else{
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//        editor = sharedPreferences.edit();
+//        editor.putBoolean("night", true);
+//
+//    }
 
+//    editor.apply();
 
-    }else{
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        editor = sharedPreferences.edit();
-        editor.putBoolean("night", true);
-
-    }
-
-    editor.apply();
-
-}catch (Exception e){
-    e.printStackTrace();
-    Toast.makeText(getContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
-}
-
-            }
-        });
+//}catch (Exception e){
+//    e.printStackTrace();
+//    Toast.makeText(getContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
+//}
+//
+//            }
+//        });
 
 
 
